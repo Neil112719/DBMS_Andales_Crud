@@ -63,7 +63,6 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product) : RedirectResponse
     {
-        $product = Product::findOrFail($id);
         $product->update($request->all());
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
